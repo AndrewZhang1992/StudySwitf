@@ -14,148 +14,124 @@ import UIKit
 
 /*************************************************
  *
- *  第一部分：基础类型 （字符串\集合容器）
+ *  第二部分：枚举
  *
  *************************************************/
 
 
 /**
  *  code by Andrew
- *  time: 16-07-26 11:05
- *  func: 字符串 字符
+ *  time:
+ *  func: 枚举
  */
 
-var s = String()
-
-if s.isEmpty {
-    print("a")
-}else{
-    print("b")
-}
-
-let dog = "this is a 🐶"
-
-for  c in dog.characters {
-     print(c)
-}
-
-print(dog.lengthOfBytes(using: String.Encoding.utf8))
-
-
-
-// 从字符串中 读取 数字
-let numbers:CharacterSet = CharacterSet(charactersIn: "0123456789")
-var numStr = "ab2c3.1.0"
-var tempNumStr:String = ""
-for scac in numStr.unicodeScalars {
-    if numbers.contains(scac) {
-       tempNumStr=tempNumStr .appending("\(scac)")
-    }
-}
-print(tempNumStr)
-
-
-/**
- *  code by Andrew
- *  time: 16-07-26 11:48
- *  func: 集合类型
+/*
+    swift 中的枚举 不像 c 语言中的枚举，必须设置 int 值 为了每一个枚举，swift中的枚举，可以不必为了每一个枚举设置 值，但是 也可以设置。
+        如果 要设置 枚举具体值 ，必须 指定 枚举返回 raw 的类型。
  */
 
-// 1. 创建 空数组
-var ary = []
+// 1. 定义 一个 枚举
 
-ary = ary.adding("1")
-ary = ary.adding(2)
-
-print(ary.count)
-
-ary = Array(arrayLiteral: "a","b",1)
-
-
-
-let  abc = [1,2,3,4]
-
-var total=0
-for (index,item) in abc.enumerated().reversed().filter({ (index,item) -> Bool in
-    return (index % 2==1)
-}){
-    print(index)
-    print(item)
-    total+=item
+enum  CompassPoint{
+    case north
+    case south
+    case east
+    case west
 }
 
-print(total)
+print("\(CompassPoint.north)")
 
 
 
-// 字符串数组
+// Raw Values
 
-var strAry: [String]=[]
+// 定义一个枚举 带有 raw 返回类型
 
-// 添加一个元素
-
-strAry.append("A")
-
-// 叠加 数组
-strAry += ["B"]
-
-// 不可以 叠减
-//strAry -= ["A"]
-
-strAry .remove(at: 0)
-
-// 2. 创建 集合容器
-
-var strSet: Set<String> = []
-
-strSet.insert("abc")
-strSet.insert("cde")
-strSet.insert("abc")
-
-strSet.remove("abc")
-
-strSet
-
-// 3. 字典
-
-var nameDic:[String:String] = [:]
-
-nameDic["li"]="lijiang"
-nameDic["zhang"]="zhangsan"
-nameDic["lis"]="lisa"
-
-for name in nameDic.values {
-    print(name)
+enum Chars:String
+{
+    case a = "a1"
+    case b = "b1"
+    case c = "c1"
+    case d = "d1"
 }
 
-// 是否存在键
+print("\(Chars.a.rawValue)")
 
-// 1. let 常量法
-if let name = nameDic["wang"] {
-    // 存在
-    print(name)
-}else{
-    print("no one")
+// 获取一个枚举
+let aa = Chars(rawValue:"b1")
+print("\(aa)")
+
+
+
+// 自动递增
+enum Nums:Int
+{
+    case a = 1
+    case b
+    case c
 }
 
-// 2. index
-if (nameDic.index(forKey: "wang") != nil) {
-    // 存在
-}else{
-    print("a gril is no one")
+print("\(Nums.b.rawValue)")
+
+let cc = Nums(rawValue:3)
+print("\(cc)")
+
+
+
+// 不赋值
+
+// 默认从 0 开始 自动递增
+enum Anums:Int
+{
+    case a,b
+    case c
+}
+
+print("\(Anums.a.rawValue)")
+
+// 如果raw 是 字符串，则 自动将 枚举 赋值 给 raw
+enum Strs:String
+{
+    case a
+    case b
+    case c
+}
+print("\(Strs.a.rawValue)")
+
+// 枚举 可以 直接 使用 switch 语句, 不像 c 语言中 必须要是  int 类型才可以
+
+let str = Strs.b
+switch str {
+case .a:
+    print("\(Strs.a.rawValue)")
+case .b:
+    print("\(Strs.b.rawValue)")
+case .c:
+    print("\(Strs.c.rawValue)")
 }
 
 
+/*
+    Associated Values （多个类型的值）
+    这种类型的枚举 实际上作用 和 结构体很像了，这类型的枚举 也一般 不会用来记录 不同状态。先了解，看看 之后 有没有 更大的用处
+ */
 
+// 定义
+enum QRcode
+{
+    case upc(Int,Int,Int,Int)
+    case qrCode(String)
+}
+// 使用
+var qr = QRcode.upc(103,104,105,192)
 
-
-
-
-
-
-
-
-
+qr = QRcode.qrCode("xAXdaew")
+switch qr {
+case var .upc(num1,num2,num3,num4):
+    print("num1=\(num1),num2=\(num2),num3=\(num3),num4=\(num4)")
+case var QRcode.qrCode(code):
+    print(code)
+}
 
 
 
