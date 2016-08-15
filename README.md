@@ -4,6 +4,18 @@
 
 ## 说明
 
+> 目录解析：
+> 
+> 1: Swift 3.0 Language 语法部分 
+> 
+> 2: custom 中包含的一些文件 是 常用类（一些扩展或者一些基类）
+>
+> 3: Demo  实例demo
+
+
+
+#### 1.语法部分
+
 * First.playground  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 第一部分：基础类型 （字符串\集合容器）
 
 * Second.playground &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       第二部分：枚举
@@ -17,3 +29,15 @@
 * AZSix  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 第六部分：类型投射 Type Casting
 
 * AZSeven   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 第七部分：分类 和 协议 
+
+
+#### 2.实例demo
+
+* TableView  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 简单的tableview demo
+
+
+
+
+
+
+

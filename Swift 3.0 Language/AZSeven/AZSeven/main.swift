@@ -49,13 +49,16 @@ extension Person
     var sex:Bool { return true} // 计算类型 成员变量
     func sayHello()
     {
-        print(self.name+" hello ")
+        let sexStr:String = self.sex ? "boy" : "girl"
+        print(" hello ! every body! my name is"+self.name+"and, i am a "+sexStr)
     }
 }
 
 var p = Person(name: "zhansan")
 
 p.sayHello()
+
+
 
 
 
