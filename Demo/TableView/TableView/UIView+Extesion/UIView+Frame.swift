@@ -47,4 +47,16 @@ extension UIView
         }
     }
     
+    var  right:CGFloat{
+        get{
+            return self.x+self.width;
+        }
+    }
+    
+    var  bottom: CGFloat {
+        get{
+            return self.y+self.height;
+        }
+    }
+    
 }

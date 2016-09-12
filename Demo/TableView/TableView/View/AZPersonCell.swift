@@ -21,7 +21,7 @@ class AZPersonCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         avatar = UIImageView.init(frame: CGRect(x: 10, y: 5, width: 35, height: 35))
-        avatar.backgroundColor = UIColor.lightGray()
+        avatar.backgroundColor = UIColor.lightGray
         self.addSubview(avatar)
         nameLabel = UILabel.init(frame: CGRect(x: avatar.x+avatar.width+10, y: avatar.y, width: self.width-(avatar.x+avatar.width+10)-10, height: self.height-2*avatar.y))
         nameLabel.font=UIFont.systemFont(ofSize: 15.0)
