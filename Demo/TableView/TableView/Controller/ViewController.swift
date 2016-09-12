@@ -24,7 +24,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         tableView.tableFooterView=UIView.init()
         self.view .addSubview(tableView)
 
-        tableView.backgroundColor = UIColor.fromRGB(hexRGB: 0x038ae6)
+        tableView.backgroundColor = UIColor.fromRGB(0x038ae6)
+        
+
         
     }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AZPersonCell: UITableViewCell {
 
     var avatar: UIImageView!
