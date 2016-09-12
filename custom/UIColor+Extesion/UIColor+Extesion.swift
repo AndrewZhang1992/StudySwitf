@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor
 {
-    static func fromRGB(hexRGB:UInt32) -> UIColor {
+    static func fromRGB(_ hexRGB:UInt32) -> UIColor {
         
         let r  = CGFloat((hexRGB & 0xFF0000) >> 16)/255.0
         let g = CGFloat((hexRGB & 0xFF00) >> 8)/255.0
@@ -20,3 +20,6 @@ extension UIColor
         return UIColor(red: r, green: g, blue: b, alpha: 1.0)
     }
 }
+
+
+
