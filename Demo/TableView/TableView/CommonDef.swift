@@ -44,7 +44,7 @@ public class AZTools : NSObject{
     static let SCALE_6PY = IS_IPHONE6P_OR_7P ? SCALE_Y : 1
  
     
-    public static func convert_scale(_ x : CGFloat) -> CGFloat {
+    open class func convert_scale(_ x : CGFloat) -> CGFloat {
         return x/2
     }
     
@@ -56,7 +56,7 @@ public class AZTools : NSObject{
     /// - parameter x:
     ///
     /// - returns:
-    public static func convertTo6_W(_ x : CGFloat) -> CGFloat{
+    open class func convertTo6_W(_ x : CGFloat) -> CGFloat{
         return convert_scale(x) * 320 / 375
     }
 
@@ -66,7 +66,7 @@ public class AZTools : NSObject{
     /// - parameter x:
     ///
     /// - returns:
-    public static func convertTo6_H(_ x : CGFloat) -> CGFloat {
+    open class func convertTo6_H(_ x : CGFloat) -> CGFloat {
         return convert_scale(x) * 568 / 667
     }
 

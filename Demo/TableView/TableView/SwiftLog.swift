@@ -34,32 +34,32 @@ class Switf_Log: NSObject {
     private override init() {
     }
     
-    public func setLogOwner(_ owner: AZLogOwner) -> Void {
+    open class func setLogOwner(_ owner: AZLogOwner) -> Void {
         self.owners .removeAllObjects()
         self.owners .add(NSNumber(integerLiteral: owner.rawValue))
     }
     
-    static func all (_ format: String, _ args: CVarArg...){
+    open class func all (_ format: String, _ args: CVarArg...){
         AZLogBase.log("all", AZLogOwner.All, format, args)
     }
     
-    static func lw (_ format: String, _ args: CVarArg...){
+    open class func lw (_ format: String, _ args: CVarArg...){
         AZLogBase.log("LW", AZLogOwner.LW, format, args)
     }
     
-    static func syx (_ format: String, _ args: CVarArg...){
+    open class func syx (_ format: String, _ args: CVarArg...){
         AZLogBase.log("SYX", AZLogOwner.SYX, format, args)
     }
     
-    static func az (_ format: String, _ args: CVarArg...){
+    open class func az (_ format: String, _ args: CVarArg...){
         AZLogBase.log("Andrew", AZLogOwner.Andrew, format, args)
     }
     
-    static func fwb (_ format: String, _ args: CVarArg...){
+    open class func fwb (_ format: String, _ args: CVarArg...){
         AZLogBase.log("FWB", AZLogOwner.FWB, format, args)
     }
     
-    static func qz (_ format: String, _ args: CVarArg...){
+    open class func qz (_ format: String, _ args: CVarArg...){
         AZLogBase.log("QZ", AZLogOwner.YQZ, format, args)
     }
     
