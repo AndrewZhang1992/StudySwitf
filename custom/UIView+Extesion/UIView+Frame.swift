@@ -1,14 +1,4 @@
-//
-//  UIView+Frame.swift
-//  AZSevenT
-//
-//  Created by Andrew on 16/7/26.
-//  Copyright © 2016年 Andrew. All rights reserved.
-//
-
-import Foundation
-import UIKit
-
+// MARK: - frame
 extension UIView
 {
     var x:CGFloat{
@@ -45,6 +35,14 @@ extension UIView
         set{
             self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: self.frame.size.width, height: newValue))
         }
+    }
+    
+    var right: CGFloat {
+        return self.frame.size.origin.x + self.frame.size.width
+    }
+    
+    var bottom: CGFloat {
+        return self.frame.size.origin.y + self.frame.size.height
     }
     
 }

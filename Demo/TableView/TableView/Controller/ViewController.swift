@@ -18,7 +18,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
        
         self.title = "简单 tableview demo "
         
-        tableView = UITableView.init(frame:  CGRect(x: 0, y: 20, width: self.view.bounds.width, height: self.view.bounds.height-20), style: UITableViewStyle.plain)
+        tableView = UITableView.init(frame:  CGRect(x: 0, y: 0, width: AZSCREEN.WIDTH, height: AZSCREEN.HEIGHT), style: UITableViewStyle.plain)
         tableView.delegate=self
         tableView.dataSource=self
         tableView.tableFooterView=UIView.init()
@@ -26,7 +26,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
         tableView.backgroundColor = UIColor.fromRGB(0x038ae6)
         
-
+        if AZTools.IS_IPHONE6 {
+            NSLog("400 px 转化为 %f dp", AZTools.convert_scale(400));
+            NSLog("是iphone6");
+        }
         
     }
 
