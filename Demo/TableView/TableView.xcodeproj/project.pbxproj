@@ -14,6 +14,7 @@
 		B02A271A1D618F5B00CD34AC /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A27191D618F5B00CD34AC /* TableViewTests.swift */; };
 		B02A27251D618F5B00CD34AC /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A27241D618F5B00CD34AC /* TableViewUITests.swift */; };
 		B0A2667A1D8E70A900D526F1 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A266791D8E70A900D526F1 /* CommonDef.swift */; };
+		B0A2667C1D8E8D7D00D526F1 /* SwiftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2667B1D8E8D7D00D526F1 /* SwiftLog.swift */; };
 		B0B3567C1D8671BA00545924 /* UIColor+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3567B1D8671BA00545924 /* UIColor+Extesion.swift */; };
 		B0B7AB171D61A773000EBC3A /* AZPeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B7AB0E1D61A773000EBC3A /* AZPeopleVC.swift */; };
 		B0B7AB181D61A773000EBC3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B7AB0F1D61A773000EBC3A /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		B02A27241D618F5B00CD34AC /* TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUITests.swift; sourceTree = "<group>"; };
 		B02A27261D618F5B00CD34AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A266791D8E70A900D526F1 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
+		B0A2667B1D8E8D7D00D526F1 /* SwiftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLog.swift; sourceTree = "<group>"; };
 		B0B3567B1D8671BA00545924 /* UIColor+Extesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extesion.swift"; sourceTree = "<group>"; };
 		B0B7AB0E1D61A773000EBC3A /* AZPeopleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPeopleVC.swift; sourceTree = "<group>"; };
 		B0B7AB0F1D61A773000EBC3A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				B02A270B1D618F5B00CD34AC /* Assets.xcassets */,
 				B02A270D1D618F5B00CD34AC /* LaunchScreen.storyboard */,
 				B02A27101D618F5B00CD34AC /* Info.plist */,
+				B0A2667B1D8E8D7D00D526F1 /* SwiftLog.swift */,
 				B0A266791D8E70A900D526F1 /* CommonDef.swift */,
 			);
 			path = TableView;
@@ -346,6 +349,7 @@
 				B0F04EE01D61A072003495E7 /* AZPerson.swift in Sources */,
 				B02A27051D618F5B00CD34AC /* AppDelegate.swift in Sources */,
 				B0A2667A1D8E70A900D526F1 /* CommonDef.swift in Sources */,
+				B0A2667C1D8E8D7D00D526F1 /* SwiftLog.swift in Sources */,
 				B0B7AB1B1D61A773000EBC3A /* AZPersonTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

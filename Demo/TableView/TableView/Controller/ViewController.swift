@@ -18,6 +18,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
        
         self.title = "简单 tableview demo "
         
+        NSLog("nslog 开始了")
+        
+        Switf_Log.all("开始一个简单的swift demo，从这里开始学习swift3.0");
+        
+        // 设置打印 用户 ,不设置 默认只打印出 all
+        Switf_Log.defaultLog.setLogOwner(AZLogOwner.Andrew);
+        
+        
         tableView = UITableView.init(frame:  CGRect(x: 0, y: 0, width: AZSCREEN.WIDTH, height: AZSCREEN.HEIGHT), style: UITableViewStyle.plain)
         tableView.delegate=self
         tableView.dataSource=self
@@ -26,9 +34,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
         tableView.backgroundColor = UIColor.fromRGB(0x038ae6)
         
+     
         if AZTools.IS_IPHONE6 {
-            NSLog("400 px 转化为 %f dp", AZTools.convert_scale(400));
-            NSLog("是iphone6");
+            Switf_Log.all("看看海");
+            Switf_Log.az("400 px 转化为 %f dp", AZTools.convert_scale(400));
+            Switf_Log.az("是iphone6");
         }
         
     }
