@@ -34,32 +34,32 @@ class Switf_Log: NSObject {
     private override init() {
     }
     
-    open class func setLogOwner(_ owner: AZLogOwner) -> Void {
+    open func setLogOwner(_ owner: AZLogOwner) -> Void {
         self.owners .removeAllObjects()
         self.owners .add(NSNumber(integerLiteral: owner.rawValue))
     }
     
-    open class func all (_ format: String, _ args: CVarArg...){
+    open class func all (_ format: Any, _ args: CVarArg...){
         AZLogBase.log("all", AZLogOwner.All, format, args)
     }
     
-    open class func lw (_ format: String, _ args: CVarArg...){
+    open class func lw (_ format: Any, _ args: CVarArg...){
         AZLogBase.log("LW", AZLogOwner.LW, format, args)
     }
     
-    open class func syx (_ format: String, _ args: CVarArg...){
+    open class func syx (_ format: Any, _ args: CVarArg...){
         AZLogBase.log("SYX", AZLogOwner.SYX, format, args)
     }
     
-    open class func az (_ format: String, _ args: CVarArg...){
+    open class func az (_ format: Any, _ args: CVarArg...){
         AZLogBase.log("Andrew", AZLogOwner.Andrew, format, args)
     }
     
-    open class func fwb (_ format: String, _ args: CVarArg...){
+    open class func fwb (_ format: Any, _ args: CVarArg...){
         AZLogBase.log("FWB", AZLogOwner.FWB, format, args)
     }
     
-    open class func qz (_ format: String, _ args: CVarArg...){
+    open class func qz (_ format: Any, _ args: CVarArg...){
         AZLogBase.log("QZ", AZLogOwner.YQZ, format, args)
     }
     
@@ -71,15 +71,15 @@ public class AZLogBase : NSObject {
     
     #if DEBUG
     
-    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: String, _ args: CVarArg...) {
+    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: Any, _ args: CVarArg...) {
         if (Switf_Log.defaultLog.owners.contains(NSNumber(integerLiteral: AZLogOwner.All.rawValue))  || Switf_Log.defaultLog.owners.contains(NSNumber(integerLiteral: log_owner.rawValue))) {
-            NSLog("[owner: %@]\n--------\n" + format + "\n--------\n", name, args);
+            NSLog("[owner: %@]\n--------\n" + "\(format)" + "\n--------\n", name, args);
         }
     }
     
     #else
     
-    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: String, _ args: CVarArg...) {
+    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: Any, _ args: CVarArg...) {
         //  no thing to do
     }
     
