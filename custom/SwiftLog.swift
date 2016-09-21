@@ -40,46 +40,71 @@ class Switf_Log: NSObject {
     }
     
     open class func all (_ format: Any, _ args: CVarArg...){
-        AZLogBase.log("all", AZLogOwner.All, format, args)
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("all", AZLogOwner.All, format, pointer)
+        }
     }
     
     open class func lw (_ format: Any, _ args: CVarArg...){
-        AZLogBase.log("LW", AZLogOwner.LW, format, args)
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("LW", AZLogOwner.LW, format, pointer)
+        }
     }
     
     open class func syx (_ format: Any, _ args: CVarArg...){
-        AZLogBase.log("SYX", AZLogOwner.SYX, format, args)
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("SYX", AZLogOwner.SYX, format, pointer)
+        }
     }
     
     open class func az (_ format: Any, _ args: CVarArg...){
-        AZLogBase.log("Andrew", AZLogOwner.Andrew, format, args)
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("Andrew", AZLogOwner.Andrew, format, pointer)
+        }
     }
     
     open class func fwb (_ format: Any, _ args: CVarArg...){
-        AZLogBase.log("FWB", AZLogOwner.FWB, format, args)
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("FWB", AZLogOwner.FWB, format, pointer)
+        }
     }
     
     open class func qz (_ format: Any, _ args: CVarArg...){
-        AZLogBase.log("QZ", AZLogOwner.YQZ, format, args)
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("QZ", AZLogOwner.YQZ, format, pointer)
+        }
     }
     
 }
 
 
+// MARK: 提供对外角色 log
+// 为了书写便捷，使用小写
+open class az{
+    open class func log(_ format: Any, _ args: CVarArg...){
+        withVaList(args) {   (pointer: CVaListPointer) in  return
+            AZLogBase.log("Andrew", AZLogOwner.Andrew, format, pointer)
+        }
+    }
+}
 
+
+
+
+// MARK: 以下代码勿动
 public class AZLogBase : NSObject {
     
     #if DEBUG
     
-    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: Any, _ args: CVarArg...) {
+    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: Any, _ args: CVaListPointer) {
     if (Switf_Log.defaultLog.owners.contains(NSNumber(integerLiteral: AZLogOwner.All.rawValue))  || Switf_Log.defaultLog.owners.contains(NSNumber(integerLiteral: log_owner.rawValue))) {
-    NSLog("[owner: %@]\n--------\n" + "\(format)" + "\n--------\n", name, args);
+    NSLogv("[owner: \(name)]\n--------\n" + "\(format)" + "\n--------\n", args);
     }
     }
     
     #else
     
-    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: Any, _ args: CVarArg...) {
+    static func log(_ name : String , _ log_owner : AZLogOwner , _ format: Any, _ args:CVaListPointer) {
         //  no thing to do
     }
     

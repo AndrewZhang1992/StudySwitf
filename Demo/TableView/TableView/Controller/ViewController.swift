@@ -20,6 +20,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         NSLog("nslog 开始了")
         
+        // 两种便捷 nslog
+        
+        // 第一种 swift_log
+         Switf_Log.az("%@%ld%@%f","开心",12,"天",1.50);
+        
+        // 第二种 az.log
+        az.log("我是第 %@ 种便捷log", "二")
+        
+        
+        
         Switf_Log.all("开始一个简单的swift demo，从这里开始学习swift3.0");
         
         // 设置打印 用户 ,不设置 默认只打印出 all
