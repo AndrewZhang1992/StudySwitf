@@ -32,7 +32,7 @@ class InputNameViewController: UIViewController {
         let sureBtn = UIButton(type: .system)
         sureBtn.frame=CGRect(x: 40, y: 160, width: 300, height: 30)
         sureBtn .setTitle("确定", for: .normal)
-        sureBtn.addTarget(self, action: #selector(responseName), for: .touchUpInside)
+        sureBtn.addTarget(self, action: #selector(self.responseName), for: .touchUpInside)
         self.view.addSubview(sureBtn)
     }
 
@@ -42,7 +42,7 @@ class InputNameViewController: UIViewController {
     }
     
     
-    dynamic private func responseName(){
+     @objc private func responseName(){
         
         self.delegate?.sureName?(self.inputText.text!)
 
