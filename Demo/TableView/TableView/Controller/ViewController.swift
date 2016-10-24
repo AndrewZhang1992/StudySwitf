@@ -20,6 +20,19 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         NSLog("nslog 开始了")
         
+        // 延时 
+        
+        delay(3) { 
+            NSLog("延时3s 来了")
+        }
+        
+        let task = delay(5) {
+            NSLog("哈哈哈")
+        }
+        task.cancel()
+        
+        
+        
         // 两种便捷 nslog
         
         // 第一种 swift_log

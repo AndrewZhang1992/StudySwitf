@@ -73,6 +73,16 @@ public class AZTools : NSObject{
 }
 
 
+//MARK: 延时函数
+
+@available(iOS 8.0, *)
+@discardableResult func delay(_ afterTime:TimeInterval, _ block : @escaping ()->Void ) -> DispatchWorkItem
+{
+     let workItem = DispatchWorkItem(block: block)
+     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+afterTime, execute: workItem)
+    return workItem
+}
+
 class CommonDef: NSObject {
 
 }

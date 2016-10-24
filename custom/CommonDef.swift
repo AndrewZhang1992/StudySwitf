@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 public struct AZSCREEN{
-   static let WIDTH = UIScreen.main.bounds.width
-   static let HEIGHT = UIScreen.main.bounds.height
+    static let WIDTH = UIScreen.main.bounds.width
+    static let HEIGHT = UIScreen.main.bounds.height
 }
 
 public class AZTools : NSObject{
@@ -42,7 +42,7 @@ public class AZTools : NSObject{
     // 5  6  比例一致，6p 放大
     static let SCALE_6PX = IS_IPHONE6_OR_7 ? SCALE_X : 1
     static let SCALE_6PY = IS_IPHONE6P_OR_7P ? SCALE_Y : 1
- 
+    
     
     open class func convert_scale(_ x : CGFloat) -> CGFloat {
         return x/2
@@ -59,8 +59,8 @@ public class AZTools : NSObject{
     open class func convertTo6_W(_ x : CGFloat) -> CGFloat{
         return convert_scale(x) * 320 / 375
     }
-
- 
+    
+    
     /// height 转化为最低兼容设备尺寸
     ///
     /// - parameter x:
@@ -69,10 +69,20 @@ public class AZTools : NSObject{
     open class func convertTo6_H(_ x : CGFloat) -> CGFloat {
         return convert_scale(x) * 568 / 667
     }
-
+    
 }
 
 
-class CommonDef: NSObject {
+//MARK: 延时函数
 
+@available(iOS 8.0, *)
+@discardableResult func delay(_ afterTime:TimeInterval, _ block : @escaping ()->Void ) -> DispatchWorkItem
+{
+    let workItem = DispatchWorkItem(block: block)
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+afterTime, execute: workItem)
+    return workItem
+}
+
+class CommonDef: NSObject {
+    
 }
