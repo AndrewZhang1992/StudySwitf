@@ -33,6 +33,7 @@
 * Swift keywords &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   第九部分：特殊章节 之 关键字
 * SignleWrite   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   第十部分：特殊章节 之 单例的写法
 
+* 11th_(Higher Order function).playground&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  第十一部分：特殊章节 之 高阶函数(Higher Order function) 
 
 #### 2.实例demo
 
